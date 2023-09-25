@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+
 void get_substr(int* start, int* end) {
 	const char* str = "beautiful";
 	char substr[10];
