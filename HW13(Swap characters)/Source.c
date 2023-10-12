@@ -16,11 +16,3 @@ int main() {
 
     return 0;
 }
-
-//3 4    a b
-//7 4    a+b b
-//7 1    a+b b-a
-//8 1    2b b-a
-//4 1    b b-a
-//4 -3   b -a
-//4 3    b a
