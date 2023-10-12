@@ -1,9 +1,9 @@
 #include <stdio.h>
 
 void swap_characters(int a, int b, char* S) {
-    char temp = S[a - 1];
-    S[a - 1] = S[b - 1];
-    S[b - 1] = temp;
+    S[a - 1] = S[a - 1] ^ S[b - 1];
+    S[b - 1] = S[b - 1] ^ S[a - 1];
+    S[a - 1] = S[a - 1] ^ S[b - 1];
 }
 
 int main() {
