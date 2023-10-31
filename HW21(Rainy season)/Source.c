@@ -6,7 +6,7 @@ void get_max_raindays(char* input) {
     int max = 0;
     int cnt = 0;
 
-    for (int i = 0; input[i] != '\0' && input[i] != '\n'; i++) {
+    for (int i = 0; ; i++) {
         if (input[i] == 'R') {
             cnt++;
         }
@@ -16,10 +16,12 @@ void get_max_raindays(char* input) {
             }
             cnt = 0;
         }
-    }
-
-    if (max < cnt) {
-        max = cnt;
+        else {
+            if (max < cnt) {
+                max = cnt;
+            }
+            break;
+        }
     }
 
     printf("%d", max);
