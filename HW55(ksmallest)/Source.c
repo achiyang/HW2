@@ -2,26 +2,21 @@
 #include <math.h>
 
 int main() {
-	int K, num = 0;
+    int N;
 
-	scanf("%d", &K);
+    scanf("%d", &N);
 
-	for (int i = 0; i < K; i++) {
-		int temp = num, count = 0;
-		while (temp % 10 == 2) {
-			temp /= 10;
-			count++;
-		}
-		num += 2 * pow(10, count);
+    int result = 0;
 
-		temp = 2;
-		while (count--) {
-			num -= temp;
-			temp *= 10;
-		}
-	}
+    int power = 1;
+    while (N) {
+        int digit = (N % 2 == 1) ? 2 : 0;
+        result += digit * power;
+        power *= 10;
+        N >>= 1;
+    }
 
-	printf("%d", num);
+    printf("%d\n", result);
 
-	return 0;
+    return 0;
 }
