@@ -35,5 +35,7 @@ int main() {
 
 	printf("%s", S_);
 
+	free(S_);
+
 	return 0;
 }
