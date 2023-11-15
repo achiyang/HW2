@@ -2,12 +2,13 @@
 #include <string.h>
 
 int check(char* str) {
-	char* threestr[7] = { "ACE","BDF","CEG","DFA","EGB","FAC","GBD" };
-
-	for (int i = 0; i < 7; i++) {
-		if (strcmp(str, threestr[i]) == 0) {
-			return 1;
+	if (str[0] >= 'A' && str[0] <= 'G') {
+		for (int i = 0; i < 2; i++) {
+			if ((str[i] - 'A' + 2) % 7 != str[i + 1] - 'A') {
+				return 0;
+			}
 		}
+		return 1;
 	}
 	return 0;
 }
