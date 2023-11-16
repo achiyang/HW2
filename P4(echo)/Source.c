@@ -1,4 +1,4 @@
-#include <stdio.h>
+  #include <stdio.h>
 
 void print_echo(int len, char* str) {
 	for (int i = 0; i < len; i++) {
@@ -6,7 +6,6 @@ void print_echo(int len, char* str) {
 			printf("%c", str[i]);
 		}
 	}
-	return;
 }
 
 int main() {
