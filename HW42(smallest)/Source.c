@@ -8,9 +8,7 @@ int main() {
 	for (int i = 0; i < N; i++) {
 		int input;
 		scanf("%d", &input);
-		if (arr[input] == 0) {
-			arr[input] = 1;
-		}
+		arr[input] = 1;
 	}
 
 	for (smallest = 1; arr[smallest]; smallest++);
