@@ -1,32 +1,21 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 int main() {
-	int N, count = 1;
-	int* sequence;
+	int N, smallest, arr[2001] = { 0 };
 
 	scanf("%d", &N);
 
-	sequence = (int*)malloc(sizeof(int) * N);
-
 	for (int i = 0; i < N; i++) {
-		scanf("%d", &sequence[i]);
+		int input;
+		scanf("%d", &input);
+		if (arr[input] == 0) {
+			arr[input] = 1;
+		}
 	}
 
-	while (1) {
-		int is = 0;
-		for (int i = 0; i < N; i++) {
-			if (count == sequence[i]) {
-				is = 1;
-			}
-		}
-		if (is == 0) {
-			break;
-		}
-		count++;
-	}
+	for (smallest = 1; arr[smallest]; smallest++);
 
-	printf("%d", count);
+	printf("%d", smallest);
 
 	return 0;
 }
