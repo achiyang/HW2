@@ -8,7 +8,7 @@ int is(char** list, char* str, int size, int index) {
 			continue;
 		}
 		for (int j = 0; j < 2; j++) {
-			if (strstr(list[i * 2 + j], str) != NULL) {
+			if (strcmp(list[i * 2 + j], str) == 0) {
 				return 1;
 			}
 		}
@@ -30,7 +30,7 @@ int main() {
 	}
 
 	for (int i = 0; i < N; i++) {
-		if (is(list, list[i * 2], N, i) != NULL && is(list, list[i * 2 + 1], N, i) != NULL) {
+		if (is(list, list[i * 2], N, i) != 0 && is(list, list[i * 2 + 1], N, i) != 0) {
 			printf("NO");
 			return 0;
 		}
