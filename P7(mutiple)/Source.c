@@ -1,4 +1,4 @@
-#include <stdio.h>
+ #include <stdio.h>
 
 int main() {
 	int N, a_count = 0, b_count = 0;
@@ -15,7 +15,7 @@ int main() {
 	}
 
 	if (N == 1) {
-		printf("a: %d, B: %d\n", a_count, b_count);
+		printf("a: %d, b: %d\n", a_count, b_count);
 	}
 	else {
 		printf("NO\n");
