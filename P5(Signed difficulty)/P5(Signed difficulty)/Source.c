@@ -1,18 +1,20 @@
 #include <stdio.h>
 
 int main() {
-	int X, Y;
+	float value;
 
-	scanf("%d.%d", &X, &Y);
+	scanf("%f", &value);
 
-	if (Y <= 2) {
-		printf("%d-", X);
+	value *= 10;
+
+	if ((int)value % 10 <= 2) {
+		printf("%d-", (int)value / 10);
 	}
-	else if (Y <= 6) {
-		printf("%d", X);
+	else if ((int)value % 10 <= 6) {
+		printf("%d", (int)value / 10);
 	}
 	else {
-		printf("%d+", X);
+		printf("%d+", (int)value / 10);
 	}
 
 	return 0;
