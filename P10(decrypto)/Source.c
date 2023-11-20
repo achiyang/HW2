@@ -16,8 +16,10 @@ int main() {
 		scanf(" %d", &P[i]);
 	}
 
-	for (int i = 0; S[i] != '\0'; i++) {
-		S[i] += P[i % M];
+	for (int i = 0; i < N; i++) {
+		if ((int)S[i] + P[i % M] <= 127) {
+			S[i] += P[i % M];
+		}
 	}
 
 	printf("%s\n", S);
