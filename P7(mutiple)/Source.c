@@ -1,9 +1,9 @@
  #include <stdio.h>
 
 int main() {
-	int N, a_count = 0, b_count = 0;
+	unsigned int N, a_count = 0, b_count = 0;
 
-	scanf("%d", &N);
+	scanf("%u", &N);
 
 	while (N % 2 == 0) {
 		N /= 2;
@@ -15,7 +15,7 @@ int main() {
 	}
 
 	if (N == 1) {
-		printf("a: %d, b: %d\n", a_count, b_count);
+		printf("a: %u, b: %u\n", a_count, b_count);
 	}
 	else {
 		printf("NO\n");
