@@ -1,4 +1,5 @@
 #include <stdio.h>
+#define abs(a, b) (((a) - (b)) > 0 ? ((a) - (b)) : ((b) - (a)))
 
 int main() {
 	int diff_index[2] = { 0 }, diff_count = 0;
