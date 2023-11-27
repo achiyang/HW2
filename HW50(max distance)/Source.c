@@ -17,7 +17,7 @@ int main() {
 
 	for (int i = 0; i < N - 1; i++) {
 		for (int j = i + 1; j < N; j++) {
-			double distance = sqrt(pow(abs(point[i][0] - point[j][0]), 2) + pow(abs(point[i][1] - point[j][1]), 2));
+			double distance = sqrt(pow(point[i][0] - point[j][0], 2) + pow(point[i][1] - point[j][1], 2));
 			max_distance = max(max_distance, distance);
 		}
 	}
