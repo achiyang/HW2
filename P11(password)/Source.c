@@ -27,7 +27,7 @@ int main() {
 		printf("Weak\n");
 	}
 	else {
-		printf("Strong");
+		printf("Strong\n");
 	}
 
 	return 0;
