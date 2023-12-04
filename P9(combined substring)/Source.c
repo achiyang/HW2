@@ -7,12 +7,15 @@ void print_pair(char** S, char* T, int N) {
 	char combine_string[201];
 
 	for (int i = 0; i < N; i++) {
+		int len = strlen(S[i]);
+		strcpy(combine_string, S[i]);
+
 		for (int j = 0; j < N; j++) {
 			if (i == j) continue;
 
 			int is = 1;
 
-			strcpy(combine_string, S[i]);
+			combine_string[len] = '\0';
 			strcat(combine_string, S[j]);
 
 			char* cp = combine_string;
