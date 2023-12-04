@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 
 void swap(char* char_1, char* char_2) {
 	char temp = *char_1;
@@ -7,18 +8,18 @@ void swap(char* char_1, char* char_2) {
 	*char_2 = temp;
 }
 
-void print_permutation(char* str, int start, int len) {
-	if (start == len) {
+void print_permutation(char* str, int start, int end) {
+	if (start == end) {
 		printf("%s\n", str);
 		return;
 	}
 
-	int char_occurrence[26] = { 0 };
-	for (int i = start; i < len; i++) {
-		if (!char_occurrence[str[i] - 'a']) {
-			char_occurrence[str[i] - 'a'] = 1;
+	bool is_used[26] = { 0 };
+	for (int i = start; i <= end; i++) {
+		if (!is_used[str[i] - 'a']) {
+			is_used[str[i] - 'a'] = true;
 			if(i != start) swap(&str[start], &str[i]);
-			print_permutation(str, start + 1, len);
+			print_permutation(str, start + 1, end);
 			if(i != start) swap(&str[start], &str[i]);
 		}
 	}
@@ -31,7 +32,7 @@ int main() {
 
 	int len = strlen(S);
 
-	print_permutation(S, 0, len);
+	print_permutation(S, 0, len - 1);
 
 	return 0;
 }
