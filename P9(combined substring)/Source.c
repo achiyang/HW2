@@ -17,11 +17,12 @@ void print_pair(char** S, char* T, int N) {
 
 			char* cp = combine_string;
 			for (int k = 0; T[k] != '\0'; k++) {
-				if (strchr(cp, T[k]) == NULL) {
+				cp = strchr(cp, T[k]);
+				if (cp == NULL) {
 					is = 0;
 					break;
 				}
-				cp = strchr(cp, T[k]) + 1;
+				cp++;
 			}
 			if (is) {
 				printf("(%d, %d)\n", i + 1, j + 1);
