@@ -24,9 +24,9 @@ void print_combination(char* str, int start, int len) {
 			}
 		}
 		if (!is_duplicate) {
-		swap(&str[start], &str[i]);
-		print_combination(str, start + 1, len);
-		swap(&str[start], &str[i]);
+			swap(&str[start], &str[i]);
+			print_combination(str, start + 1, len);
+			swap(&str[start], &str[i]);
 		}
 	}
 }
