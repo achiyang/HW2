@@ -2,11 +2,9 @@
 #include <string.h>
 
 void swap(char* char_1, char* char_2) {
-	if (*char_1 != *char_2) {
-		char temp = *char_1;
-		*char_1 = *char_2;
-		*char_2 = temp;
-	}
+	char temp = *char_1;
+	*char_1 = *char_2;
+	*char_2 = temp;
 }
 
 void print_combination(char* str, int start, int len) {
@@ -15,18 +13,13 @@ void print_combination(char* str, int start, int len) {
 		return;
 	}
 
+	int char_occurrence[26] = { 0 };
 	for (int i = start; i <= len; i++) {
-		int is_duplicate = 0;
-		for (int j = start; j < i; j++) {
-			if (str[j] == str[i]) {
-				is_duplicate = 1;
-				break;
-			}
-		}
-		if (!is_duplicate) {
-			swap(&str[start], &str[i]);
+		if (!char_occurrence[str[i] - 'a']) {
+			char_occurrence[str[i] - 'a'] = 1;
+			if(i != start) swap(&str[start], &str[i]);
 			print_combination(str, start + 1, len);
-			swap(&str[start], &str[i]);
+			if(i != start) swap(&str[start], &str[i]);
 		}
 	}
 }
