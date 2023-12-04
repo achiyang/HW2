@@ -14,7 +14,7 @@ void print_combination(char* str, int start, int len) {
 	}
 
 	int char_occurrence[26] = { 0 };
-	for (int i = start; i <= len; i++) {
+	for (int i = start; i < len; i++) {
 		if (!char_occurrence[str[i] - 'a']) {
 			char_occurrence[str[i] - 'a'] = 1;
 			if(i != start) swap(&str[start], &str[i]);
@@ -31,7 +31,7 @@ int main() {
 
 	int len = strlen(S);
 
-	print_combination(S, 0, len - 1);
+	print_combination(S, 0, len);
 
 	return 0;
 }
