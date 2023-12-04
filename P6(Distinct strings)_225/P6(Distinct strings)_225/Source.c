@@ -7,7 +7,7 @@ void swap(char* char_1, char* char_2) {
 	*char_2 = temp;
 }
 
-void print_combination(char* str, int start, int len) {
+void print_permutation(char* str, int start, int len) {
 	if (start == len) {
 		printf("%s\n", str);
 		return;
@@ -18,7 +18,7 @@ void print_combination(char* str, int start, int len) {
 		if (!char_occurrence[str[i] - 'a']) {
 			char_occurrence[str[i] - 'a'] = 1;
 			if(i != start) swap(&str[start], &str[i]);
-			print_combination(str, start + 1, len);
+			print_permutation(str, start + 1, len);
 			if(i != start) swap(&str[start], &str[i]);
 		}
 	}
@@ -31,7 +31,7 @@ int main() {
 
 	int len = strlen(S);
 
-	print_combination(S, 0, len);
+	print_permutation(S, 0, len);
 
 	return 0;
 }
